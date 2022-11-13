@@ -10,7 +10,7 @@ export interface GitHubRelease {
 
 export const getRelease = async (distribution: string, version: string): Promise<GitHubRelease | null> => {
   const resolvedVersion: string = (await resolveVersion(distribution, version)) || version;
-  const url = `https://github.com/goreleaser/${distribution}/releases/${resolvedVersion}`;
+  const url = `https://github.com/legit-labs/${distribution}/releases/${resolvedVersion}`;
   const http: httpm.HttpClient = new httpm.HttpClient('goreleaser-action');
   return (await http.getJson<GitHubRelease>(url)).result;
 };

@@ -15,7 +15,7 @@ export async function install(distribution: string, version: string): Promise<st
 
   const filename = getFilename(distribution);
   const downloadUrl = util.format(
-    'https://github.com/gal-legit/%s/releases/download/%s/%s',
+    'https://github.com/legit-labs/%s/releases/download/%s/%s',
     distribution,
     release.tag_name,
     filename
